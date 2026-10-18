@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar Cuenta / Delete Account — SplitSmart</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    :root {
+      --bg: #f0f4ff;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555555;
+      --accent: #2563eb;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --border: #e2e8f0;
+      --success: #16a34a;
+      --success-bg: #f0fdf4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+    }
+    h1 { font-size: 1.65rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    p, ul, ol { color: var(--muted); margin-bottom: 1rem; }
+    ul, ol { padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; }
+    .box {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin: 1.25rem 0;
+      background: #f8fafc;
+    }
+    .danger-box {
+      border: 1px solid #fecaca;
+      background: var(--danger-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+    input {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .btn-danger {
+      width: 100%;
+      background: var(--danger);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-danger:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .status-msg {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.925rem;
+      display: none;
+    }
+    .status-msg.error {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
+    }
+    .status-msg.success {
+      display: block;
+      background: var(--success-bg);
+      color: var(--success);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hidden { display: none; }
+    .footer {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="brand">SplitSmart • Pebble Apps</div>
+      <div class="lang-switch">
+        <button id="btn-es" class="lang-btn active" onclick="setLang('es')">Español</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">English</button>
+      </div>
+    </div>
+
+    <!-- SPANISH VERSION -->
+    <div id="content-es">
+      <h1>Eliminación de Cuenta y Datos</h1>
+      <p>Puedes eliminar permanentemente tu cuenta de <strong>SplitSmart</strong> (desarrollada por <strong>Pebble Apps</strong>) directamente desde la aplicación móvil o desde esta página web.</p>
+
+      <div class="box">
+        <h2>Opción 1: Eliminar al instante desde la app SplitSmart</h2>
+        <ol>
+          <li>Abre la aplicación <strong>SplitSmart</strong> e inicia sesión.</li>
+          <li>Toca el ícono de <strong>Ajustes (⚙️)</strong> en la esquina superior derecha.</li>
+          <li>Desplázate hasta la sección <strong>Zona de peligro</strong> y toca <strong>Eliminar cuenta</strong>.</li>
+          <li>Confirma la eliminación. Tu cuenta se eliminará de inmediato.</li>
+        </ol>
+      </div>
+
+      <h2>Qué datos se eliminan y cuáles se conservan</h2>
+      <ul>
+        <li><strong>Eliminados inmediatamente:</strong> Tu cuenta de autenticación (correo electrónico / vínculo OAuth), tu perfil (nombre, moneda, estado Pro), tus tokens de notificaciones push (FCM) y tus redenciones de códigos promocionales.</li>
+        <li><strong>Anonimizados en grupos compartidos:</strong> Tu membresía en grupos compartidos se marca como eliminada para que tu cuenta personal quede desvinculada, conservando únicamente los montos contables históricos dentro de los grupos de otros participantes para no alterar ni corromper sus saldos.</li>
+      </ul>
+    </div>
+
+    <!-- ENGLISH VERSION -->
+    <div id="content-en" class="hidden">
+      <h1>Account & Data Deletion</h1>
+      <p>You can permanently delete your <strong>SplitSmart</strong> account (developed by <strong>Pebble Apps</strong>) either directly inside the mobile app or from this web page.</p>
+
+      <div class="box">
+        <h2>Option 1: Instant Deletion Inside the SplitSmart App</h2>
+        <ol>
+          <li>Open the <strong>SplitSmart</strong> app and sign in.</li>
+          <li>Tap the <strong>Settings (⚙️)</strong> icon in the top-right corner.</li>
+          <li>Scroll down to the <strong>Danger Zone</strong> section and tap <strong>Delete Account</strong>.</li>
+          <li>Confirm the prompt. Your account and personal data are deleted immediately.</li>
+        </ol>
+      </div>
+
+      <h2>What Data Is Deleted vs. Retained</h2>
+      <ul>
+        <li><strong>Permanently Deleted Immediately:</strong> Your authentication record (email / OAuth identity), user profile (name, currency, Pro status), FCM push notification device tokens, and promo code redemptions.</li>
+        <li><strong>Anonymized in Shared Groups:</strong> Your group membership entry is soft-deleted and unlinked from your personal identity so that historical expense math for remaining group members is not corrupted.</li>
+      </ul>
+    </div>
+
+    <!-- INTERACTIVE WEB DELETION FORM -->
+    <div class="danger-box">
+      <h2 id="form-title">Opción 2: Eliminar cuenta desde la Web</h2>
+      <p id="form-desc">Si creaste tu cuenta con correo y contraseña, ingresa tus credenciales para eliminar tu cuenta inmediatamente desde el navegador:</p>
+
+      <form id="delete-form" onsubmit="handleWebDelete(event)">
+        <div class="form-group">
+          <label id="lbl-email" for="email">Correo electrónico</label>
+          <input type="email" id="email" required placeholder="tu@correo.com">
+        </div>
+        <div class="form-group">
+          <label id="lbl-password" for="password">Contraseña</label>
+          <input type="password" id="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" id="btn-submit" class="btn-danger">Eliminar mi cuenta permanentemente</button>
+      </form>
+      <div id="status-box" class="status-msg"></div>
+
+      <p id="oauth-note" style="margin-top: 1.25rem; margin-bottom: 0; font-size: 0.9rem;">
+        ¿Iniciaste sesión con <strong>Google Sign-In</strong> o ya desinstalaste la app? Envía una solicitud desde el correo de tu cuenta a
+        <a href="mailto:edwin.amador7@gmail.com?subject=SplitSmart%20-%20Solicitud%20de%20Eliminaci%C3%B3n%20de%20Cuenta&body=Hola%20Pebble%20Apps%2C%0A%0ASolicito%20la%20eliminaci%C3%B3n%20permanente%20de%20mi%20cuenta%20de%20SplitSmart%20asociada%20a%20este%20correo%20electr%C3%B3nico."><strong>edwin.amador7@gmail.com</strong></a>
+        y procesaremos la eliminación completa en menos de 48 horas.
+      </p>
+    </div>
+
+    <div class="footer">
+      © 2026 Pebble Apps • <a href="privacy-policy.html">Política de Privacidad / Privacy Policy</a>
+    </div>
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://iomlfaotziiscvpalinj.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable_ouEIuz-JCqqsyu3cPy9t4Q_H-qcjSMg';
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    let currentLang = 'es';
+
+    const copy = {
+      es: {
+        formTitle: 'Opción 2: Eliminar cuenta desde la Web',
+        formDesc: 'Si creaste tu cuenta con correo y contraseña, ingresa tus credenciales para eliminar tu cuenta inmediatamente desde el navegador:',
+        lblEmail: 'Correo electrónico',
+        lblPassword: 'Contraseña',
+        btnSubmit: 'Eliminar mi cuenta permanentemente',
+        btnLoading: 'Eliminando cuenta…',
+        confirmPrompt: '¿Estás seguro de que deseas eliminar permanentemente tu cuenta de SplitSmart? Esta acción no se puede deshacer.',
+        successMsg: 'Tu cuenta de SplitSmart y todos tus datos personales han sido eliminados permanentemente.',
+        oauthNote: '¿Iniciaste sesión con <strong>Google Sign-In</strong> o ya desinstalaste la app? Envía una solicitud desde el correo de tu cuenta a <a href="mailto:edwin.amador7@gmail.com?subject=SplitSmart%20-%20Solicitud%20de%20Eliminaci%C3%B3n%20de%20Cuenta&body=Hola%20Pebble%20Apps%2C%0A%0ASolicito%20la%20eliminaci%C3%B3n%20permanente%20de%20mi%20cuenta%20de%20SplitSmart%20asociada%20a%20este%20correo%20electr%C3%B3nico."><strong>edwin.amador7@gmail.com</strong></a> y procesaremos la eliminación completa en menos de 48 horas.'
+      },
+      en: {
+        formTitle: 'Option 2: Delete Account on the Web',
+        formDesc: 'If you registered with email and password, sign in below to permanently delete your account right from your browser:',
+        lblEmail: 'Email address',
+        lblPassword: 'Password',
+        btnSubmit: 'Permanently Delete My Account',
+        btnLoading: 'Deleting account…',
+        confirmPrompt: 'Are you sure you want to permanently delete your SplitSmart account? This action cannot be undone.',
+        successMsg: 'Your SplitSmart account and all associated personal data have been permanently deleted.',
+        oauthNote: 'Signed up with <strong>Google Sign-In</strong> or already uninstalled the app? Send an email from your registered address to <a href="mailto:edwin.amador7@gmail.com?subject=SplitSmart%20-%20Account%20Deletion%20Request&body=Hello%20Pebble%20Apps%2C%0A%0AI%20request%20the%20permanent%20deletion%20of%20my%20SplitSmart%20account%20associated%20with%20this%20email%20address."><strong>edwin.amador7@gmail.com</strong></a> and we will complete the deletion within 48 hours.'
+      }
+    };
+
+    function setLang(lang) {
+      currentLang = lang;
+      const isEn = lang === 'en';
+      document.getElementById('content-es').classList.toggle('hidden', isEn);
+      document.getElementById('content-en').classList.toggle('hidden', !isEn);
+      document.getElementById('btn-es').classList.toggle('active', !isEn);
+      document.getElementById('btn-en').classList.toggle('active', isEn);
+      document.documentElement.lang = lang;
+
+      const t = copy[lang];
+      document.getElementById('form-title').textContent = t.formTitle;
+      document.getElementById('form-desc').textContent = t.formDesc;
+      document.getElementById('lbl-email').textContent = t.lblEmail;
+      document.getElementById('lbl-password').textContent = t.lblPassword;
+      document.getElementById('btn-submit').textContent = t.btnSubmit;
+      document.getElementById('oauth-note').innerHTML = t.oauthNote;
+    }
+
+    if ((navigator.language || '').toLowerCase().startsWith('en')) {
+      setLang('en');
+    }
+
+    async function handleWebDelete(e) {
+      e.preventDefault();
+      const t = copy[currentLang];
+      if (!window.confirm(t.confirmPrompt)) return;
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const btn = document.getElementById('btn-submit');
+      const statusBox = document.getElementById('status-box');
+
+      btn.disabled = true;
+      btn.textContent = t.btnLoading;
+      statusBox.className = 'status-msg';
+      statusBox.style.display = 'none';
+
+      try {
+        const { data: signInData, error: signInErr } = await sb.auth.signInWithPassword({ email, password });
+        if (signInErr || !signInData.session) {
+          throw new Error(signInErr ? signInErr.message : 'Invalid credentials');
+        }
+
+        const res = await fetch(`${SUPABASE_URL}/functions/v1/delete-account`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${signInData.session.access_token}`,
+            'apikey': SUPABASE_ANON_KEY,
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (!res.ok) {
+          const errText = await res.text();
+          throw new Error(errText || `HTTP ${res.status}`);
+        }
+
+        await sb.auth.signOut();
+        document.getElementById('delete-form').reset();
+        statusBox.textContent = t.successMsg;
+        statusBox.className = 'status-msg success';
+      } catch (err) {
+        statusBox.textContent = err.message || 'Error';
+        statusBox.className = 'status-msg error';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = t.btnSubmit;
+      }
+    }
+  </script>
+</body>
+</html>
