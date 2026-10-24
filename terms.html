@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos de Servicio / Terms of Service — SplitSmart</title>
+  <style>
+    :root {
+      --bg: #f0f4ff;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555555;
+      --accent: #2563eb;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .updated {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+    p, ul {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .hidden {
+      display: none;
+    }
+    .footer {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div class="brand">SplitSmart • Pebble Apps</div>
+      <div class="lang-switch">
+        <button id="btn-es" class="lang-btn active" onclick="setLang('es')">Español</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">English</button>
+      </div>
+    </div>
+
+    <!-- SPANISH VERSION -->
+    <div id="content-es">
+      <h1>Términos de Servicio</h1>
+      <p class="updated">Última actualización: 24 de octubre de 2026</p>
+
+      <p>Bienvenido a <strong>SplitSmart</strong> (identificador de paquete <code>com.pebbleapps.splitsmart</code>), operado por <strong>Pebble Apps</strong> («nosotros», «nuestro»). Al descargar, acceder o utilizar la aplicación móvil SplitSmart, aceptas quedar vinculado por estos Términos de Servicio.</p>
+
+      <h2>1. Descripción del Servicio</h2>
+      <p>SplitSmart es una herramienta de seguimiento y división de gastos grupales que permite registrar gastos compartidos, calcular saldos y simplificar deudas tanto en modo local sin conexión (Modo Invitado / Personal) como sincronizado en la nube entre miembros del grupo.</p>
+      <p><strong>Aviso importante:</strong> SplitSmart es únicamente una herramienta informativa de contabilidad entre pares. No somos una institución financiera, transmisor de dinero ni procesador de pagos, y no movemos fondos reales entre usuarios.</p>
+
+      <h2>2. Cuentas y Elegibilidad</h2>
+      <ul>
+        <li>Debes tener al menos 13 años de edad para utilizar SplitSmart.</li>
+        <li>Puedes usar el Modo Invitado sin registrarte, en cuyo caso tus datos se almacenan localmente en tu dispositivo.</li>
+        <li>Para crear o unirte a grupos compartidos en la nube, debes crear una cuenta mediante correo electrónico o Google Sign-In y mantener la seguridad de tus credenciales.</li>
+      </ul>
+
+      <h2>3. Suscripciones a SplitSmart Pro y Prueba Gratuita</h2>
+      <ul>
+        <li><strong>Plan de Suscripción Anual (<code>splitsmart_pro_annual</code>):</strong> SplitSmart ofrece una suscripción opcional con renovación automática que elimina todos los anuncios y los límites de grupos y gastos diarios en la nube.</li>
+        <li><strong>Prueba Gratuita de 7 Días y Renovación Automática:</strong> Los nuevos suscriptores elegibles reciben una prueba gratuita de 7 días. Al finalizar el período de prueba de 7 días, la suscripción se convierte automáticamente en una suscripción anual de pago (al precio mostrado en la pantalla de compra de Google Play en tu moneda local) y se renueva automáticamente cada año a menos que se cancele al menos 24 horas antes del final del período de prueba o del período de facturación actual.</li>
+        <li><strong>Administración y Cancelación:</strong> Todas las compras y cobros son procesados por Google Play Billing. Puedes administrar o cancelar tu suscripción en cualquier momento desde <em>Google Play Store → Pagos y suscripciones → Suscripciones</em> o desde el botón <em>Administrar suscripción</em> en los Ajustes de la aplicación.</li>
+        <li><strong>Códigos Promocionales:</strong> Los usuarios que canjeen un código promocional válido de por vida (<code>lifetime</code>) conservan el acceso Pro sin cargos recurrentes.</li>
+      </ul>
+
+      <h2>4. Límites del Plan Gratuito y Anuncios Recompensados</h2>
+      <p>Las cuentas gratuitas incluyen hasta 3 grupos compartidos en la nube y 3 gastos en la nube por día sin publicidad. Si deseas agregar más gastos o grupos sin suscribirte a SplitSmart Pro, puedes optar voluntariamente por ver un anuncio de video recompensado a través de Google AdMob para desbloquear un pase adicional (+3 gastos adicionales o la creación de un grupo adicional).</p>
+
+      <h2>5. Uso Aceptable y Contenido del Usuario</h2>
+      <p>Eres responsable de la exactitud de los montos, descripciones y nombres de miembros que ingreses en tus grupos. Te comprometes a no utilizar el servicio para actividades ilegales, abusivas, fraudulentas ni para enviar recordatorios no solicitados (spam) a otros usuarios.</p>
+
+      <h2>6. Eliminación de Cuenta y Terminación</h2>
+      <p>Puedes dejar de usar SplitSmart y eliminar permanentemente tu cuenta y datos personales en cualquier momento desde <em>Ajustes → Zona de peligro → Eliminar cuenta</em> dentro de la aplicación o a través de nuestra página web de <a href="delete-account.html">Eliminación de Cuenta</a>.</p>
+
+      <h2>7. Exención de Garantías y Limitación de Responsabilidad</h2>
+      <p>SplitSmart se proporciona «tal cual» y «según disponibilidad», sin garantías de ningún tipo, expresas o implícitas. En la máxima medida permitida por la ley aplicable, Pebble Apps no será responsable por disputas entre miembros de un grupo, pérdidas indirectas, daños incidentales ni errores derivados del ingreso manual de datos o interrupciones de conectividad.</p>
+
+      <h2>8. Contacto</h2>
+      <p>Si tienes preguntas sobre estos Términos de Servicio, contáctanos en:<br>
+      <strong>Pebble Apps</strong> — <a href="mailto:edwin.amador7@gmail.com">edwin.amador7@gmail.com</a></p>
+    </div>
+
+    <!-- ENGLISH VERSION -->
+    <div id="content-en" class="hidden">
+      <h1>Terms of Service</h1>
+      <p class="updated">Last updated: October 24, 2026</p>
+
+      <p>Welcome to <strong>SplitSmart</strong> (package ID <code>com.pebbleapps.splitsmart</code>), operated by <strong>Pebble Apps</strong> ("we", "our", or "us"). By downloading, accessing, or using the SplitSmart mobile application, you agree to be bound by these Terms of Service.</p>
+
+      <h2>1. Description of Service</h2>
+      <p>SplitSmart is a group expense tracking and bill-splitting application that enables users to record shared expenses, calculate running balances, and simplify debts both offline on a single device (Guest / Personal Mode) and synced in real time across group members in the cloud.</p>
+      <p><strong>Important Notice:</strong> SplitSmart is strictly an informational bookkeeping tool. We are not a bank, money transmitter, or payment processor, and we do not transfer actual funds between users.</p>
+
+      <h2>2. Accounts & Eligibility</h2>
+      <ul>
+        <li>You must be at least 13 years old to use SplitSmart.</li>
+        <li>You may use Guest Mode without registering an account, in which case your data remains stored locally on your device.</li>
+        <li>To create or join shared cloud groups, you must register an account via email/password or Google Sign-In and keep your login credentials secure.</li>
+      </ul>
+
+      <h2>3. SplitSmart Pro Subscriptions & Free Trial</h2>
+      <ul>
+        <li><strong>Annual Subscription Plan (<code>splitsmart_pro_annual</code>):</strong> SplitSmart offers an optional auto-renewing annual subscription that removes all advertisements and lifts cloud group and daily expense limits.</li>
+        <li><strong>7-Day Free Trial & Auto-Renewal:</strong> Eligible new subscribers receive a 7-day free trial. Unless cancelled at least 24 hours before the 7-day trial ends, your trial automatically converts into a paid annual subscription (at the price displayed on the Google Play purchase sheet in your local currency) and automatically renews each year unless cancelled at least 24 hours prior to the end of the current billing period.</li>
+        <li><strong>Management & Cancellation:</strong> All billing is handled by Google Play Billing. You can manage or cancel your subscription at any time in <em>Google Play Store → Payments & subscriptions → Subscriptions</em>, or via the <em>Manage subscription</em> button in the app's Settings screen.</li>
+        <li><strong>Promo Codes:</strong> Users who redeem a valid <code>lifetime</code> promotional code retain Pro access without recurring subscription charges.</li>
+      </ul>
+
+      <h2>4. Free Tier Limits & Opt-In Rewarded Ads</h2>
+      <p>Free accounts include up to 3 shared cloud groups and 3 cloud expenses per day at no cost. Beyond these limits, you may either upgrade to SplitSmart Pro or voluntarily opt in to watch a short rewarded video advertisement served by Google AdMob to unlock an additional batch pass (+3 expenses or an additional cloud group).</p>
+
+      <h2>5. Acceptable Use & User Content</h2>
+      <p>You are responsible for the accuracy of the expense descriptions, amounts, and member names you enter. You agree not to use SplitSmart for any unlawful, fraudulent, or abusive purpose, or to harass other users via settlement reminders.</p>
+
+      <h2>6. Account Deletion & Termination</h2>
+      <p>You may stop using SplitSmart and permanently delete your account and associated personal data at any time from <em>Settings → Danger Zone → Delete Account</em> inside the app or via our web <a href="delete-account.html">Account Deletion Page</a>.</p>
+
+      <h2>7. Disclaimer of Warranties & Limitation of Liability</h2>
+      <p>SplitSmart is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind. To the fullest extent permitted by law, Pebble Apps shall not be liable for disputes between group members, indirect or consequential damages, or inaccuracies resulting from manual data entry or network interruptions.</p>
+
+      <h2>8. Contact Us</h2>
+      <p>If you have any questions about these Terms of Service, please contact us at:<br>
+      <strong>Pebble Apps</strong> — <a href="mailto:edwin.amador7@gmail.com">edwin.amador7@gmail.com</a></p>
+    </div>
+
+    <div class="footer">
+      © 2026 Pebble Apps • <a href="privacy-policy.html">Privacidad / Privacy Policy</a> • <a href="delete-account.html">Eliminar cuenta / Delete Account</a>
+    </div>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      const isEn = lang === 'en';
+      document.getElementById('content-es').classList.toggle('hidden', isEn);
+      document.getElementById('content-en').classList.toggle('hidden', !isEn);
+      document.getElementById('btn-es').classList.toggle('active', !isEn);
+      document.getElementById('btn-en').classList.toggle('active', isEn);
+      document.documentElement.lang = lang;
+    }
+    if ((navigator.language || '').toLowerCase().startsWith('en')) {
+      setLang('en');
+    }
+  </script>
+</body>
+</html>
