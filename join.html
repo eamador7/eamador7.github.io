@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join a Group — SplitSmart</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f0f4ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      max-width: 380px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+    h1 { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 0.75rem; }
+    p { font-size: 1rem; color: #555; line-height: 1.6; }
+    .code {
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: #1a1a1a;
+      background: #e8eeff;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1.5rem 0 1rem;
+      user-select: all;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      margin-top: 0.75rem;
+      border-radius: 10px;
+      border: 2px solid #3f51b5;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-primary { background: #3f51b5; color: white; }
+    .btn-secondary { background: white; color: #3f51b5; }
+    .hint { margin-top: 1.5rem; font-size: 0.875rem; color: #888; }
+    .hidden { display: none; }
+    footer { margin-top: 1.5rem; font-size: 0.75rem; color: #888; }
+    footer a { color: #888; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>You're invited!</h1>
+    <p>Join the group on SplitSmart with this invite code.</p>
+    <div class="code" id="code">------</div>
+    <p id="error" class="hidden">No valid invite code found in this link.</p>
+    <button class="btn btn-secondary" id="copy" type="button">Copy Code</button>
+    <a class="btn btn-primary" id="open" href="splitsmart://join/">Open in SplitSmart</a>
+    <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.pebbleapps.splitsmart">Get it on Google Play</a>
+    <p class="hint">Don't have the app yet? Install it, then enter the code under "Join a group".</p>
+    <footer>&copy; Pebble Apps &middot; <a href="privacy-policy.html">Privacy Policy</a></footer>
+  </div>
+  <script>
+    (function () {
+      var raw = new URLSearchParams(window.location.search).get('code') || '';
+      var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+      var codeEl = document.getElementById('code');
+      var copyBtn = document.getElementById('copy');
+      var openBtn = document.getElementById('open');
+      if (!code) {
+        document.getElementById('error').classList.remove('hidden');
+        copyBtn.classList.add('hidden');
+        openBtn.classList.add('hidden');
+        return;
+      }
+      codeEl.textContent = code;
+      openBtn.href = 'splitsmart://join/' + code;
+      copyBtn.addEventListener('click', function () {
+        function done() { copyBtn.textContent = 'Copied!'; }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(code).then(done, done);
+        } else {
+          var r = document.createRange();
+          r.selectNodeContents(codeEl);
+          var s = window.getSelection();
+          s.removeAllRanges();
+          s.addRange(r);
+          try { document.execCommand('copy'); } catch (e) {}
+          done();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
