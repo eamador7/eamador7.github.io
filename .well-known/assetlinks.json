@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.pebbleapps.splitsmart",
+      "sha256_cert_fingerprints": [
+        "69:78:42:5A:E2:B1:36:0F:90:46:A6:7E:46:19:1D:2C:F2:DD:A1:E7:B6:22:CE:6B:80:B4:8D:32:33:04:04:9D",
+        "C5:9C:0A:52:2A:98:0A:D2:41:48:4A:10:E3:B8:83:27:BE:FB:51:E8:91:9E:D2:63:A5:D0:93:31:66:A8:A7:53"
+      ]
+    }
+  }
+]
